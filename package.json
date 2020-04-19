@@ -1,0 +1,13 @@
+{
+  "name": "vuepress-theme-melody",
+  "version": "1.0.0",
+  "description": "blog by vuepress",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
