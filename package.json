@@ -4,10 +4,15 @@
   "description": "blog by vuepress",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
+    "build": "vuepress build docs -dest dist",
+    "dev": "vuepress dev docs --no-cache --temp .temp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "blog",
+    "theme",
+    "vuepress"
+  ],
   "author": "",
   "license": "ISC"
 }
