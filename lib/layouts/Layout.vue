@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="home">
     <PostList />
   </div>
 </template>
 
 <script>
-import PostList from "@theme/components/PostList.vue";
+import PostList from "@theme/components/PostList.vue"
 export default {
   components: { PostList }
 }

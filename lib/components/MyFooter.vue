@@ -50,25 +50,20 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.footer {
-  font-color: #fff;
-  text-align: center;
-  ul {
-    list-style: none;
-    font-size: 20px;
-    box-sizing: border-box;
-    padding: 5px;
-    li {
-      display: inline;
-      padding: 0 10px;
-    }
-  }
-  .copyright {
-    font-size: 14px;
-    color: #777;
-    a {
-      color: #337ab7;
-    }
-  }
-}
+.footer
+  font-color #fff
+  text-align center
+  ul 
+    list-style none
+    font-size 20px
+    box-sizing border-box
+    padding 5px
+    li 
+      display inline
+      padding 0 10px
+  .copyright 
+    font-size 14px
+    color #777
+    a 
+      color #337ab7
 </style>

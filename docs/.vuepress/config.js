@@ -12,7 +12,9 @@ module.exports = {
   theme: path.resolve(__dirname,'../../lib'),
   themeConfig: {
     title: 'Top Blog',
-
+    pagination: {
+      perPage: 5,
+    },
     // Nav link
     nav: [ 
       {text: "HOME", link: '/' },
