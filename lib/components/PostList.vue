@@ -17,6 +17,17 @@
         :post="post"
       />
     </div>
+    <div class="post-paginator">
+      <el-pagination
+        background
+        :page-size="perPage"
+        :pager-count="5"
+        @current-change="changePage"
+        :hide-on-single-page="true"
+        layout="prev, pager, next"
+        :total="total">
+      </el-pagination>
+    </div>
   </div>
 </template>
 
@@ -26,7 +37,7 @@ export default {
   name: 'PostList',
   data() {
     return {
-      page: 1,
+      currentPage: 1,
     }
   },
   components: {
@@ -42,17 +53,20 @@ export default {
     },
 
     total () {
-      return Math.ceil(this.listPosts.length / this.perPage)
+      return this.listPosts.length
     },
 
     pagePosts () {
-      const begin = (this.page - 1) * this.perPage
+      const begin = (this.currentPage - 1) * this.perPage
       const end = begin + this.perPage
       return this.listPosts.slice(begin, end)
     },
   },
-  mounted() {
-    console.log(this.listPosts, "postList")
+  methods: {
+    changePage(index) {
+      this.currentPage = index
+      window.scroll({top: 0 })
+    }
   }
 }
 </script>
@@ -62,4 +76,8 @@ export default {
 
 .no-posts
   color $grayTextColor
+.post-paginator
+  padding-top 10px
+  margin-top 20px
+  text-align center
 </style>

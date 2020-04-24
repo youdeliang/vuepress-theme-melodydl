@@ -1,5 +1,8 @@
 @require "./mobile.styl"
 @require "./variables.styl"
+@require "./layouts.styl"
+@require "./animation.styl"
+
 *
   box-sizing border-box
 
@@ -39,4 +42,4 @@ a:hover
   text-decoration none
 
 .go-to-top:hover
-  color $accentColor !important
+  color lighten($accentColor, 10%) !important

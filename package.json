@@ -34,6 +34,8 @@
     "vuepress-plugin-smooth-scroll": "0.0.9"
   },
   "devDependencies": {
+    "node-sass": "^4.14.0",
+    "sass-loader": "^8.0.2",
     "vuepress": "^1.4.1"
   },
   "peerDependencies": {

@@ -63,16 +63,13 @@ export default {
   position relative
   width 100%
   justify-content center
-  margin 1rem auto
+  margin 3rem auto
+  margin-bottom 1.5rem
   .main
-    padding 1.5rem
-    border-radius 5px
-    background-color #fff
+    animation text-show-left 1s
     width 60%
   .aside
+    animation text-show-right 1s
     width 20%
-    padding 1.5rem
-    margin-left 16px
-    border-radius 5px
-    background-color #fff
+    margin-left 1.2rem
 </style>

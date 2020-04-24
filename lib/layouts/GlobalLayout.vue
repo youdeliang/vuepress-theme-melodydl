@@ -26,6 +26,6 @@ export default {
 
 #global-layout
   display grid
-  grid-template-rows 45vh 1fr 120px
+  grid-template-rows 40vh auto 120px
   min-height 100vh
 </style>

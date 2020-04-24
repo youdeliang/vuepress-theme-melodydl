@@ -1,69 +1,51 @@
 <template>
    <div class="footer">
-    <ul v-if="$themeConfig.SNS">
-      <li v-for="(item, index) in snsList" :key="index">
-        <a target="_blank" :href="item.url" v-if="item.font">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-stack-1x fa-inverse">{{item.font}}</i>
-          </span>
-        </a>
-        <a target="_blank" :href="item.url" v-else>
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i :class="`fa ${item.fontAwesome} fa-stack-1x fa-inverse`"></i>
-          </span>
-        </a>
-      </li>
-    </ul>
-    <p class="copyright text-muted">
-      Copyright &copy; {{ `${$themeConfig.title} ${new Date().getFullYear()}` }}
-      <br />
-      theme by
-      <router-link to="/">{{$themeConfig.title}}</router-link>&nbsp;|
+    <IconSns size="20"/>
+    <div class="copyright">
+      <span class="custom" v-html="custom" />
       <iframe
-        v-if="$themeConfig.gitbtn"
-        :src="$themeConfig.gitbtn.src"
+        v-if="gitbtn"
+        :src="gitbtn.repository"
+        class="footer-btn"
         style="margin-left: 2px; margin-bottom:-5px;"
-        :frameborder="$themeConfig.gitbtn.frameborder"
-        :scrolling="$themeConfig.gitbtn.scrolling"
-        :width="$themeConfig.gitbtn.width"
-        :height="$themeConfig.gitbtn.height"
-      ></iframe>
-    </p>
+        :frameborder="gitbtn.frameborder"
+        :scrolling="gitbtn.scrolling"
+        :width="gitbtn.width"
+        :height="gitbtn.height"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import IconSns from '@theme/components/IconSns.vue'
 export default {
-  data() {
-    return {
-      snsList: []
-    }
+  components: {
+    IconSns
   },
-  mounted() {
-    this.snsList = this.$themeConfig.SNS;
-    var headHTML = document.getElementsByTagName('head')[0].innerHTML;
-    headHTML += '<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">';
-    document.getElementsByTagName('head')[0].innerHTML = headHTML;
-  }
+  computed: {
+    custom () {
+      return this.$themeConfig.footer.custom || null
+    },
+    gitbtn() {
+      return this.$themeConfig.footer.gitbtn
+    },
+  },
 }
 </script>
 <style lang="stylus" scoped>
+@requier '~@theme/styles/variables'
 .footer
   font-color #fff
   text-align center
-  ul 
-    list-style none
-    font-size 20px
-    box-sizing border-box
-    padding 5px
-    li 
-      display inline
-      padding 0 10px
   .copyright 
-    font-size 14px
-    color #777
-    a 
-      color #337ab7
+    font-size 16px
+    line-height 1.5rem
+    // color $grayTextColor
+    padding-bottom 15px
+    box-sizing border-box
+    .custom
+      color $grayTextColor
+      a 
+        color $accentColor !important
 </style>

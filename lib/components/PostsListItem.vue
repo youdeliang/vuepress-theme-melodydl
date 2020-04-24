@@ -1,19 +1,21 @@
 <template>
-  <div class="post-list-item">
+  <div class="post-list-item main-div">
     <RouterLink 
       :to="post.path" 
       class="post-link"
     > 
       <div class="post-content">
-        <h3 class="post-title">{{ post.title }}</h3>
-        <div class="post-date">
-          <i class="el-icon-date">{{ post.createdAt }}</i>
-          <i class="el-icon-folder">{{ post.frontmatter.category }}</i>
-          <i class="fa fa-tags" aria-hidden="true"></i>
-        </div>
+        <h3 class="post-title">
+          <span class="post-time">
+            <span>{{ post.createdAt | formatterDay }}</span>
+            <span>{{ post.createdAt | formatterYear }}</span>
+          </span>
+          <span>{{ post.title }}</span>
+        </h3>
         <p class="post-excerpt" v-html="post.excerpt" />
+        <p class="post-category">{{ post.frontmatter.category }}</p>
+        <div class="post-button">阅读全文</div>
       </div>
-      <div class="post-image" />
     </RouterLink>
   </div>
 </template>
@@ -32,6 +34,14 @@ export default {
       required: true
     }
   },
+  filters: {
+    formatterDay(date) {
+      return date.split("-").join(".").slice(5)
+    },
+    formatterYear(date) {
+      return date.split("-").join("").slice(0, 4)
+    }
+  },
   mounted() {
     console.log(this.post, "postList")
   }
@@ -42,22 +52,55 @@ export default {
 @require '~@theme/styles/variables'
 
 .post-list-item 
-  padding 0 0.5rem
   &:not(:first-child)
     border-top 1px solid $borderColor
+    margin-top 20px
   .post-link
     .post-content
+      position relative
       color $lightTextColor
       .post-title
         color $textColor
+        display flex
+        align-items flex-end
         transition all 0.2s
+        .post-time 
+          color #fff
+          text-align center
+          font-size 12px
+          padding 3px
+          margin-right 10px
+          display inline-flex
+          flex-direction column
+          background-color $accentColor
+          border-radius 4px
+          :first-child
+            font-size 14px
       .post-excerpt
         color $grayTextColor
         text-align justify
         padding 0
+      .post-category
+        color #ffffff
+        background-color $accentColor
+        display inline-flex
+        padding 1px 5px
+        border-radius 4px
+        font-size 12px
     &:hover
       text-decoration none
       .post-title
         color $accentColor
-        // background-image: url('https://d1qmdf3vop2l07.cloudfront.net/yellow-sage.cloudvent.net/compressed/_min_/0d604e4a276ef596282a73cd64283ac7.jpg') // d1qmdf3vop2l07.cloudfront.net/yellow-sage.cloudvent.net/compressed/_min_/0d604e4a276ef596282a73cd64283ac7.jpg)
+    .post-button
+      position absolute
+      bottom 0px
+      color #ffffff
+      right 0px
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 3px;
+      background-color $accentColor
+      &:hover
+        background-color lighten($accentColor, 10%)
 </style>
