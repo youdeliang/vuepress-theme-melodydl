@@ -1,45 +1,7 @@
-@require "./mobile.styl"
-@require "./variables.styl"
-@require "./layouts.styl"
-@require "./animation.styl"
+@require "~@theme/styles/variables.styl"
+@require "~@theme/styles/layouts.styl"
+@require "~@theme/styles/_content"
+@require "~@vuepress/theme-default/styles/code"
+@require "~@theme/styles/normalize.styl"
+@require "~prismjs/themes/prism-tomorrow.css"
 
-*
-  box-sizing border-box
-
-html
-body
-  padding 0
-  margin 0
-
-body
-  font-family -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  font-size 16px
-  color $textColor
-  background-color #f6f6f6
-
-h1, h2, h3, h4, h5, h6
-  font-weight 600
-  line-height 1.25
-
-ul
-  list-style none
-
-a
-  font-weight 500
-  text-decoration none
-
-a:focus,
-a:active 
-  outline none
-
-a,
-a:focus,
-a:hover 
-  cursor pointer
-  color inherit
-  text-decoration none
-
-.go-to-top:hover
-  color lighten($accentColor, 10%) !important

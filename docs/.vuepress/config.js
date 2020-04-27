@@ -12,10 +12,12 @@ module.exports = {
   theme: path.resolve(__dirname,'../../lib'),
   themeConfig: {
     title: 'Top Blog',
+
+    // aside personInfo
     personalInfo: {
       name: 'melodydl',
       avatar: '/avatar-top.jpeg',
-      headerBackgroundImg: '/header3.jpeg',
+      headerBackgroundImg: '/avatar-bg.jpeg',
       description: 'Happy Coding<br/>Happy Life',
       email: 'topyou0316@gmail.com',
       location: 'Shanghai, China',
@@ -27,6 +29,19 @@ module.exports = {
       {text: 'ABOUT', link: '/about/'},
       {text: 'TAGS', link: '/tags/'}      
     ],
+    header: {
+      home: {
+        title: 'You', 
+        subtitle: 'ii', 
+        headerImage: '/header4.jpeg'
+      },
+      tags: {
+        title: 'Tags', 
+        subtitle: 'iitags', 
+        headerImage: '/tags-bg.jpg'
+      },
+      postHeaderImg: '/header1.jpeg',
+    },
     // footer sns
     sns: {
       "jianshu": { 
@@ -62,6 +77,15 @@ module.exports = {
     pagination: {
       perPage: 5,
     },
+
+    comments: {
+      owner: 'youdeliang',
+      repo: 'vuepress-theme-melody',
+      clientId: 'Iv1.8197e5215c6ecefa',
+      clientSecret: '3308a6e368283725b31fa444b4a050fbb66afb0d',
+      autoCreateIssue: false,
+    },
+
     search: true,
     searchMaxSuggestions: 10
   }

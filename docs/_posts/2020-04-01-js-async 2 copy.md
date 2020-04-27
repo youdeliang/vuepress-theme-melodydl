@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "JS异步编程方案总结"
-subtitle: 'JavaScript学习笔记'
 author: "Top"
 date: 2019-02-19
 header-style: text

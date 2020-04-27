@@ -27,11 +27,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vssue/api-github-v3": "^1.4.3",
+    "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
     "date-fns": "^2.12.0",
     "element-ui": "^2.13.1",
-    "vuepress-plugin-smooth-scroll": "0.0.9"
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "vuepress-plugin-container": "^2.1.3",
+    "vuepress-plugin-smooth-scroll": "0.0.9",
+    "vuepress-plugin-table-of-contents": "^1.1.5"
   },
   "devDependencies": {
     "node-sass": "^4.14.0",
@@ -39,6 +45,6 @@
     "vuepress": "^1.4.1"
   },
   "peerDependencies": {
-    "vuepress": "^1.3.0"
+    "vuepress": "^1.4.1"
   }
 }

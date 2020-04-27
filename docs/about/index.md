@@ -1,5 +1,7 @@
 ---
+layout: about
 title: About
-subTitle: 加油
-header-image: /about-bg.jpg
+subtitle: 加油
+headerImage: /about-bg.jpg
 ---
+sss

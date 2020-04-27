@@ -1,9 +1,9 @@
 <template>
    <div class="post-list">
     <div
-      v-if="listPosts.length === 0"
+      v-if="total === 0"
       key="no-posts"
-      class="no-posts"
+      class="no-posts main-div"
     >
       no posts
     </div>
@@ -17,7 +17,9 @@
         :post="post"
       />
     </div>
-    <div class="post-paginator">
+    <div 
+      v-if="total > 1"
+      class="post-paginator">
       <el-pagination
         background
         :page-size="perPage"
@@ -40,12 +42,14 @@ export default {
       currentPage: 1,
     }
   },
+  
   components: {
     PostsListItem
   },
+
   computed: {
     listPosts () {
-      return this.posts || this.$posts
+      return this.posts || this.$posts || []
     },
 
     perPage () {
@@ -60,8 +64,9 @@ export default {
       const begin = (this.currentPage - 1) * this.perPage
       const end = begin + this.perPage
       return this.listPosts.slice(begin, end)
-    },
+    }
   },
+
   methods: {
     changePage(index) {
       this.currentPage = index
@@ -78,6 +83,6 @@ export default {
   color $grayTextColor
 .post-paginator
   padding-top 10px
-  margin-top 20px
+  margin 1rem 0
   text-align center
 </style>

@@ -52,9 +52,14 @@ export default {
 @require '~@theme/styles/variables'
 
 .post-list-item 
+  &:hover 
+    box-shadow: 0 0 15px 1px #B5B5B5;
+    transform: translateY(-3px);
   &:not(:first-child)
     border-top 1px solid $borderColor
-    margin-top 20px
+    margin-top 1.4rem
+    @media (max-width $MQMobile - 1)
+      margin 0
   .post-link
     .post-content
       position relative
@@ -67,7 +72,7 @@ export default {
         .post-time 
           color #fff
           text-align center
-          font-size 12px
+          font-size 0.75rem
           padding 3px
           margin-right 10px
           display inline-flex
@@ -77,6 +82,7 @@ export default {
           :first-child
             font-size 14px
       .post-excerpt
+        margin 1.4rem 0
         color $grayTextColor
         text-align justify
         padding 0

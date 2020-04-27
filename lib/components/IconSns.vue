@@ -21,14 +21,13 @@ export default {
     return {
       map: {
         'jianshu': ['','简'],
-        'juejin': ['', '掘'],
+        'juejin': ['fa-weibo', ''],
         'zhihu': ['', '知'],
         'github': ['fa-github','']
       }
     }
   },
   mounted() {
-    console.log(this.sns)
     var headHTML = document.getElementsByTagName('head')[0].innerHTML;
     headHTML += '<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">';
     document.getElementsByTagName('head')[0].innerHTML = headHTML;
@@ -53,6 +52,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@require '~@theme/styles/variables'
+
 ul 
   display inline-flex
   list-style none

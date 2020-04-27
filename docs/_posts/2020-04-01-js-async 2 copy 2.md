@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "JS异步编程方案总结"
-subtitle: 'JavaScript学习笔记'
 author: "Top"
 date: 2019-02-19
-header-style: text
+header-img: text
 category: demo
 tags:
   - Promise
@@ -14,7 +13,9 @@ tags:
 
 本篇博客用来。。。。
 <!-- more -->
-
+::: danger
+这是一个危险警告
+:::
 ## 前言
 Javcscript是单线程机制，单线程模型指的是，JavaScript只在一个线程上运行。也就是说，JavaScript 同时只能执行一个任务，其他任务都必须在后面排队等待。JavaScript 之所以采用单线程，而不是多线程，原因是不想让浏览器变得太复杂，因为多线程需要共享资源、且有可能修改彼此的运行结果，对于一种网页脚本语言来说，这就太复杂了。
 ## 异步编程解决了什么问题？

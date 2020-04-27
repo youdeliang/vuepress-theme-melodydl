@@ -2,7 +2,7 @@
    <div class="footer">
     <IconSns size="20"/>
     <div class="copyright">
-      <span class="custom" v-html="custom" />
+      <span id="custom" v-html="custom" />
       <iframe
         v-if="gitbtn"
         :src="gitbtn.repository"
@@ -28,12 +28,12 @@ export default {
       return this.$themeConfig.footer.custom || null
     },
     gitbtn() {
-      return this.$themeConfig.footer.gitbtn
+      return this.$themeConfig.footer.gitbtn || null
     },
   },
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 @requier '~@theme/styles/variables'
 .footer
   font-color #fff
@@ -41,11 +41,8 @@ export default {
   .copyright 
     font-size 16px
     line-height 1.5rem
-    // color $grayTextColor
-    padding-bottom 15px
+    padding-bottom 1rem
     box-sizing border-box
-    .custom
-      color $grayTextColor
-      a 
-        color $accentColor !important
+    #custom > a
+      color $accentColor
 </style>
