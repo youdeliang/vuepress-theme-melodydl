@@ -11,17 +11,20 @@
       v-else
       class="posts-items"
     >
-      <PostsListItem
-        v-for="post in pagePosts"
-        :key="post.path"
-        :post="post"
-      />
+      <TransitionSlide group>
+        <PostsListItem
+          v-for="post in pagePosts"
+          :key="post.path"
+          :post="post"
+        />
+      </TransitionSlide>
     </div>
     <div 
       v-if="total > 1"
       class="post-paginator">
       <el-pagination
         background
+        :key="total"
         :page-size="perPage"
         :pager-count="5"
         @current-change="changePage"
@@ -35,6 +38,7 @@
 
 <script>
 import PostsListItem from '@theme/components/PostsListItem.vue'
+import TransitionSlide from '@theme/components/TransitionSlide.vue'
 export default {
   name: 'PostList',
   data() {
@@ -44,9 +48,21 @@ export default {
   },
   
   components: {
-    PostsListItem
+    PostsListItem,
+    TransitionSlide
   },
-
+  props: {
+    posts: {
+      type: Array,
+      required: false,
+      default: null
+    }
+  },
+  watch: {
+    listPosts() {
+      this.currentPage = 1
+    }
+  },
   computed: {
     listPosts () {
       return this.posts || this.$posts || []
@@ -64,9 +80,15 @@ export default {
       const begin = (this.currentPage - 1) * this.perPage
       const end = begin + this.perPage
       return this.listPosts.slice(begin, end)
+    },
+
+    key() {
+      return this.posts ? this.total : null
     }
   },
-
+  mounted() {
+    console.log(this.$page)
+  },
   methods: {
     changePage(index) {
       this.currentPage = index
@@ -85,4 +107,6 @@ export default {
   padding-top 10px
   margin 1rem 0
   text-align center
+  .el-pagination >>> .el-pager li
+    background-color #fff
 </style>

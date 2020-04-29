@@ -9,7 +9,6 @@ date: 2019-01-19
 tags:
   - Promise
   - JavaScript
-  - 笔记
 ---
 本篇博客用来。。。。
 <!-- more -->

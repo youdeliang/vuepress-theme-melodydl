@@ -9,7 +9,6 @@ category: docs
 tags:
     - Web
     - JavaScript
-    - 笔记
 ---
 本篇博客用来。。。。
 <!-- more -->

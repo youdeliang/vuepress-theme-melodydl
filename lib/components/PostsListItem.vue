@@ -13,7 +13,13 @@
           <span>{{ post.title }}</span>
         </h3>
         <p class="post-excerpt" v-html="post.excerpt" />
-        <p class="post-category">{{ post.frontmatter.category }}</p>
+        <p 
+          class="tag post-category"
+          v-for="tag of tags"
+          :key="tag"
+        >
+          {{ tag }}
+        </p>
         <div class="post-button">阅读全文</div>
       </div>
     </RouterLink>
@@ -26,6 +32,9 @@ export default {
   computed: {
     listPosts() {
       return this.posts || this.$posts
+    },
+    tags() {
+      return this.post.tags || []
     }
   },
   props: {
@@ -41,9 +50,6 @@ export default {
     formatterYear(date) {
       return date.split("-").join("").slice(0, 4)
     }
-  },
-  mounted() {
-    console.log(this.post, "postList")
   }
 }
 </script>
@@ -87,10 +93,6 @@ export default {
         text-align justify
         padding 0
       .post-category
-        color #ffffff
-        background-color $accentColor
-        display inline-flex
-        padding 1px 5px
         border-radius 4px
         font-size 12px
     &:hover

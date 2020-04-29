@@ -1,27 +1,35 @@
 <template>
-  <TransitionSlide>
   <div 
     class="container"
   >
 
-    <main class="main">
+    <main 
+      class="main"
+      :style="style"
+    >
       <TransitionSlide>
         <component 
           :is="layout" 
+          :key="$page.path"
         />
       </TransitionSlide>
     </main>
-
-    <aside class="aside">
-      <InfoCard class="main-div" />
+    <TransitionSlide direction='x' >
+    <aside 
+      class="aside" 
+      v-show="layout !== 'tags'"
+    >
+      <InfoCard 
+        class="main-div"
+      />
 
       <PostToc
         v-if="$page.type === 'post'"
         class="main-div aside-toc"
       />
     </aside>
+    </TransitionSlide>
   </div>
-  </TransitionSlide>
 </template>
 
 <script>
@@ -47,6 +55,11 @@ export default {
       }
 
       return 'Layout'
+    },
+    style() {
+      return {
+        width: this.$page.path !== '/tags/' ? '60%' : '70%'
+      }
     }
   }
 }
@@ -74,7 +87,7 @@ export default {
   @media (max-width $MQMobile - 1)
     margin 0
     .main
-      width 100%
+      min-width 100%
     .aside
       display none
 </style>

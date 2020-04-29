@@ -139,6 +139,7 @@ $avatarHeight = 120px
       text-align center
     .info-desc
       margin 1rem 0
+      line-height 2rem
     .info-contact
       color $grayTextColor
       word-break break-all

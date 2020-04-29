@@ -91,7 +91,8 @@ export default {
     h1 
       font-size 5rem
     p 
-      font-size 2rem
+      font-size 1.2rem
+      margin-top 10px
     @media (max-width $MQMobile - 1)
       padding-top $navbarHeight
       & h1 

@@ -8,7 +8,6 @@ category: demo
 tags:
   - Promise
   - JavaScript
-  - 笔记
 ---
 
 本篇博客用来。。。。

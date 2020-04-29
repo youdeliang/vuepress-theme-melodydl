@@ -1,7 +1,6 @@
 <template>
   <div class="main-div not-found">
     <MyHeader />
-    <!-- <p>{{ $themeConfig.lang.notFound }}</p> -->
     <MyFooter />
   </div>
 </template>

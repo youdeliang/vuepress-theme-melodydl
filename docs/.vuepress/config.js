@@ -18,8 +18,8 @@ module.exports = {
       name: 'melodydl',
       avatar: '/avatar-top.jpeg',
       headerBackgroundImg: '/avatar-bg.jpeg',
-      description: 'Happy Coding<br/>Happy Life',
-      email: 'topyou0316@gmail.com',
+      description: 'In me the tiger sniffs the rose<br/>心有猛虎，细嗅蔷薇',
+      email: 'facecode@foxmail.com',
       location: 'Shanghai, China',
       // organization: '',
     },
@@ -31,16 +31,16 @@ module.exports = {
     ],
     header: {
       home: {
-        title: 'You', 
-        subtitle: 'ii', 
-        headerImage: '/header4.jpeg'
+        title: 'Top Blog', 
+        subtitle: '好好生活，慢慢相遇', 
+        headerImage: '/home-bg.jpeg'
       },
       tags: {
         title: 'Tags', 
-        subtitle: 'iitags', 
+        subtitle: '遇见你花光了我所有的运气', 
         headerImage: '/tags-bg.jpg'
       },
-      postHeaderImg: '/header1.jpeg',
+      postHeaderImg: '/post-bg.jpeg',
     },
     // footer sns
     sns: {
@@ -85,8 +85,5 @@ module.exports = {
       clientSecret: '3308a6e368283725b31fa444b4a050fbb66afb0d',
       autoCreateIssue: false,
     },
-
-    search: true,
-    searchMaxSuggestions: 10
   }
 }

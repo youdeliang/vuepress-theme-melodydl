@@ -1,14 +1,17 @@
 ---
 layout: post
 title: "JS异步编程方案总结"
-author: "Top"
 date: 2019-02-19
-header-img: text
 category: demo
 tags:
   - Promise
   - JavaScript
-  - 笔记
+  - JavaScript2
+  - JavaScript3
+  - JavaScript4
+  - JavaScript5
+  - JavaScript6
+  - JavaScript7
 ---
 
 本篇博客用来。。。。

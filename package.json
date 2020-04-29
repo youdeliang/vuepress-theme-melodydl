@@ -31,7 +31,7 @@
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
-    "date-fns": "^2.12.0",
+    "date-fns": "^1.30.1",
     "element-ui": "^2.13.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
