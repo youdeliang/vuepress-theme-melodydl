@@ -1,12 +1,11 @@
 {
   "name": "vuepress-theme-melodydl",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "blog by vuepress",
   "main": "lib/index.js",
   "scripts": {
     "build": "vuepress build docs -dest dist",
-    "dev": "vuepress dev docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vuepress dev docs"
   },
   "keywords": [
     "blog",
@@ -28,13 +27,9 @@
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
-    "core-js": "2",
     "date-fns": "^1.30.1",
-    "element-ui": "^2.13.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
-    "node-sass": "^4.14.0",
-    "sass-loader": "^8.0.2",
     "vuepress-plugin-container": "^2.1.3",
     "vuepress-plugin-smooth-scroll": "0.0.9",
     "vuepress-plugin-table-of-contents": "^1.1.5"
