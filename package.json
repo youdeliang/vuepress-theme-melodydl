@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-theme-melody",
+  "name": "vuepress-theme-melodydl",
   "version": "1.0.0",
   "description": "blog by vuepress",
   "main": "lib/index.js",
@@ -13,24 +13,22 @@
     "theme",
     "vuepress"
   ],
-  "homepage": "https://github.com/youdeliang/vuepress-theme-melody",
+  "homepage": "https://github.com/youdeliang/vuepress-theme-melodydl",
   "bugs": {
-    "url": "https://github.com/youdeliang/vuepress-theme-melody/issues"
+    "url": "https://github.com/youdeliang/vuepress-theme-melodydl/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/youdeliang/vuepress-theme-melody"
-  },
+  "repository": "git+https://github.com/youdeliang/vuepress-theme-melodydl",
   "files": [
     "lib/"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "youdeliang",
+  "license": "MIT",
   "dependencies": {
     "@vssue/api-github-v3": "^1.4.3",
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
+    "core-js": "2",
     "date-fns": "^1.30.1",
     "element-ui": "^2.13.1",
     "lodash.debounce": "^4.0.8",
@@ -46,5 +44,6 @@
   },
   "peerDependencies": {
     "vuepress": "^1.4.1"
-  }
+  },
+  "private": false
 }
