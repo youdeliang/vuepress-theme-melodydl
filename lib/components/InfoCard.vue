@@ -51,7 +51,7 @@
 import IconSns from '@theme/components/IconSns.vue'
 export default {
   components: {
-    IconSns
+    IconSns,
   },
   computed: {
     info () {

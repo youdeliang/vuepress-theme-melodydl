@@ -1,5 +1,6 @@
 <template>
    <div class="post-list">
+     <TransitionSlide>
     <div
       v-if="total === 0"
       key="no-posts"
@@ -9,6 +10,7 @@
     </div>
     <div
       v-else
+      :key="currentPage"
       class="posts-items"
     >
       <TransitionSlide group>
@@ -19,24 +21,20 @@
         />
       </TransitionSlide>
     </div>
+    </TransitionSlide>
     <div 
       v-if="total > 1"
       class="post-paginator">
-      <el-pagination
-        background
-        :key="total"
-        :page-size="perPage"
-        :pager-count="5"
-        @current-change="changePage"
-        :hide-on-single-page="true"
-        layout="prev, pager, next"
-        :total="total">
-      </el-pagination>
+      <Pagination
+        v-model="currentPage"
+        :total="total"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from '@theme/components/Pagination.vue'
 import PostsListItem from '@theme/components/PostsListItem.vue'
 import TransitionSlide from '@theme/components/TransitionSlide.vue'
 export default {
@@ -49,7 +47,8 @@ export default {
   
   components: {
     PostsListItem,
-    TransitionSlide
+    TransitionSlide,
+    Pagination
   },
   props: {
     posts: {
@@ -73,7 +72,7 @@ export default {
     },
 
     total () {
-      return this.listPosts.length
+      return Math.ceil(this.listPosts.length / this.perPage)
     },
 
     pagePosts () {
@@ -84,15 +83,6 @@ export default {
 
     key() {
       return this.posts ? this.total : null
-    }
-  },
-  mounted() {
-    console.log(this.$page)
-  },
-  methods: {
-    changePage(index) {
-      this.currentPage = index
-      window.scroll({top: 0 })
     }
   }
 }
@@ -107,6 +97,4 @@ export default {
   padding-top 10px
   margin 1rem 0
   text-align center
-  .el-pagination >>> .el-pager li
-    background-color #fff
 </style>

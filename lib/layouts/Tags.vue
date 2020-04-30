@@ -40,9 +40,6 @@ export default {
       this.posts = this.tagMap[tagName].posts
     }
   },
-  mounted() {
-    console.log(this.$tags, this.$page)
-  },
 
   data () {
     return {
