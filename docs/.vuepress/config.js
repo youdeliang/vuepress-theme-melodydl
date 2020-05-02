@@ -78,7 +78,6 @@ module.exports = {
       perPage: 5,
     },
 
-    comments: false
     comments: {
       owner: 'youdeliang',
       repo: 'vuepress-theme-melodydl',
