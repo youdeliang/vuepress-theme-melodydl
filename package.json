@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-melodydl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "blog by vuepress",
   "main": "lib/index.js",
   "scripts": {
