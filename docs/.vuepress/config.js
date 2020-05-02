@@ -48,7 +48,7 @@ module.exports = {
         account: "jianshu", 
         link: "https://www.jianshu.com/u/5dddaee8f351", 
       },
-      "juejin": { 
+      "weibo": { 
         account: "juejin",
         link: "https://juejin.im/user/5ce784a0f265da1b8333673c"
       },

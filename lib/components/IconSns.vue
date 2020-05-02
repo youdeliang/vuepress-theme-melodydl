@@ -21,7 +21,7 @@ export default {
     return {
       map: {
         'jianshu': ['','简'],
-        'juejin': ['fa-weibo', ''],
+        'weibo': ['fa-weibo', ''],
         'zhihu': ['', '知'],
         'github': ['fa-github','']
       }
