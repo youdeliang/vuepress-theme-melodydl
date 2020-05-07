@@ -78,10 +78,10 @@ export default {
   margin 3rem auto
   margin-bottom 1.5rem
   .main
-    width 62%
+    width 62% !important
   .aside
-    width 20%
-    margin-left 1.2rem
+    width 21%
+    margin-left 1.5rem
     .aside-toc
       margin-top 1.2rem
   @media (max-width $MQMobile - 1)

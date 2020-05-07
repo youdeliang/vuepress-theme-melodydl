@@ -58,7 +58,7 @@
         <IconSns 
           :name="name"
           :account="item.account"
-          size="30px"
+          size="35px"
         />
       </a>
     </p>
