@@ -72,6 +72,7 @@ export default {
   display inline-flex
   position relative
   width 100%
+  overflow-y scroll
   overflow-x hidden
   box-sizing border-box
   justify-content center
@@ -80,7 +81,7 @@ export default {
   .main
     width 60%
   .aside
-    width 20%
+    width 22%
     margin-left 1.2rem
     .aside-toc
       margin-top 1.2rem

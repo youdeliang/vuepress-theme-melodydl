@@ -1,6 +1,22 @@
 <template>
-   <div class="footer">
-    <IconSns size="20"/>
+   <footer class="footer">
+    <p
+     v-if="sns"
+     class="footer-sns-link" 
+    >
+      <a 
+       target="_blank" 
+       v-for="(item, name) in sns"
+       :key="name"
+       :href="item.link"
+       class="sns-link"
+      >
+        <IconSns 
+          :name="name"
+          :account="item.account"
+        />
+      </a>
+    </p>
     <div class="copyright">
       <span id="custom" v-html="custom" />
       <iframe
@@ -14,7 +30,7 @@
         :height="gitbtn.height"
       />
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -24,7 +40,10 @@ export default {
     IconSns
   },
   computed: {
-    custom () {
+    sns() {
+      return this.$themeConfig.sns || null
+    },
+    custom() {
       return this.$themeConfig.footer.custom || null
     },
     gitbtn() {
@@ -36,7 +55,7 @@ export default {
 <style lang="stylus">
 @requier '~@theme/styles/variables'
 .footer
-  font-color #fff
+  color $grayTextColor
   text-align center
   .copyright 
     font-size 16px

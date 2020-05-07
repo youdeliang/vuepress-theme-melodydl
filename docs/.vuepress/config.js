@@ -1,7 +1,7 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  title: 'Top 的博客 ｜ Top Blog',
+  title: 'Top 的博客',
   description: '个人博客',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -44,35 +44,39 @@ module.exports = {
     },
     // footer sns
     sns: {
-      "jianshu": { 
-        account: "jianshu", 
-        link: "https://www.jianshu.com/u/5dddaee8f351", 
+      csdn: { 
+        account: 'csdn', 
+        link: 'https://blog.csdn.net/weixin_44002432', 
       },
-      "weibo": { 
-        account: "juejin",
-        link: "https://juejin.im/user/5ce784a0f265da1b8333673c"
+      weibo: { 
+        account: 'weibo', 
+        link: 'https://weibo.com/u/5656925978', 
       },
-      "zhihu": { 
-        account: "zhihu",
-        link: "https://www.zhihu.com/people/sheng-tang-de-xing-kong"
+      juejin: { 
+        account: 'juejin',
+        link: 'https://juejin.im/user/5ce784a0f265da1b8333673c'
       },
-      "github": { 
-        account: "github",
-        link: "https://github.com/youdeliang"
+      zhihu: { 
+        account: 'zhihu',
+        link: 'https://www.zhihu.com/people/sheng-tang-de-xing-kong'
+      },
+      github: { 
+        account: 'github',
+        link: 'https://github.com/youdeliang'
       }
     },
     // footer github button
     footer: {
       gitbtn: {
-        repository: "https://ghbtns.com/github-btn.html?user=youdeliang&repo=vuepress-theme-top&type=star&count=true",
+        repository: 'https://ghbtns.com/github-btn.html?user=youdeliang&repo=vuepress-theme-melodydl&type=star&count=true',
         frameborder: 0,
         scrolling: 0,
-        width: "80px",
-        height: "20px"
+        width: '80px',
+        height: '20px'
       },
       custom: `Copyright &copy; Top Blog 2020 <br /> 
-        Theme By <a href="https://www.vuepress.cn/" target="_blank">VuePress</a>
-        | <a href="https://www.github.com/youdeliang/" target="_blank">youdeliang</a>`
+        Theme By <a href='https://www.vuepress.cn/' target='_blank'>VuePress</a>
+        | <a href='https://www.github.com/youdeliang/' target='_blank'>youdeliang</a>`
     },
     pagination: {
       perPage: 5,

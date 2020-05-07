@@ -24,36 +24,61 @@
 
       <section class="info-contact">
         <section v-if="location">
-          <i class="el-icon-location-outline">
+          <IconInfo
+            class="info-email"
+            type="location"
+          >
             {{ location }}
-          </i> 
+          </IconInfo> 
         </section>
 
-        <!-- <section v-if="organization">
-            {{ organization }}
-        </section> -->
-
         <section v-if="email">
-          <i class="el-icon-message">
+          <IconInfo
+            class="info-email"
+            type="email"
+          >
             {{ email }}
-          </i>
+          </IconInfo>
         </section>
 
       </section>
     </div>
     <div class="info-card-footer">
-      <IconSns />
+      <p
+        v-if="sns"
+        class="footer-sns-link" 
+      >
+      <a 
+        target="_blank" 
+        v-for="(item, name) in sns"
+        :key="name"
+        :href="item.link"
+        class="sns-link"
+      >
+        <IconSns 
+          :name="name"
+          :account="item.account"
+          size="30px"
+        />
+      </a>
+    </p>
     </div>
   </div>
 </template>
 
 <script>
 import IconSns from '@theme/components/IconSns.vue'
+import IconInfo from '@theme/components/IconInfo.vue'
 export default {
   components: {
     IconSns,
+    IconInfo
   },
   computed: {
+    sns() {
+      return this.$themeConfig.sns || null
+    },
+
     info () {
       return this.$themeConfig.personalInfo || {}
     },
