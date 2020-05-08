@@ -7,8 +7,15 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
-  serviceWorker: true,
-  base: '/',
+
+  evergreen: true,
+
+  plugins: [
+    ['@vuepress/google-analytics', {
+      ga: 'UA-165839722-1',
+    }],
+  ],
+
   theme: path.resolve(__dirname,'../../lib'),
   themeConfig: {
     title: 'Top Blog',
@@ -21,7 +28,7 @@ module.exports = {
       description: 'In me the tiger sniffs the rose<br/>心有猛虎，细嗅蔷薇',
       email: 'facecode@foxmail.com',
       location: 'Shanghai, China',
-      // organization: '',
+      // organization: '不知名某公司',
     },
     // Nav link
     nav: [ 

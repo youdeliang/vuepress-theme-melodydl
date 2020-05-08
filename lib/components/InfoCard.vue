@@ -32,6 +32,16 @@
           </IconInfo> 
         </section>
 
+        <section v-if="organization">
+          <IconInfo
+            class="info-organization"
+            type="organization"
+            :title="organization"
+          >
+            {{ organization }}
+          </IconInfo>
+        </section>
+
         <section v-if="email">
           <IconInfo
             class="info-email"
@@ -97,6 +107,10 @@ export default {
 
     location () {
       return this.info.location || null
+    },
+
+    organization () {
+      return this.info.organization || null
     },
 
     email () {

@@ -69,6 +69,7 @@ export default {
 .header-container
   color #fff
   position relative
+  width auto
   &::after 
     content ""
     position absolute

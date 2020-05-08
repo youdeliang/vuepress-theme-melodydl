@@ -55,6 +55,9 @@ export default {
 <style lang="stylus">
 @requier '~@theme/styles/variables'
 .footer
+  @media (max-width $MQMobile - 1) {
+    margin-top 1.5rem
+  }
   color $grayTextColor
   text-align center
   .copyright 

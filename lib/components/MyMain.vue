@@ -71,11 +71,10 @@ export default {
 .container
   display inline-flex
   position relative
-  width 100%
   overflow hidden
   box-sizing border-box
   justify-content center
-  margin 3rem auto
+  margin-top 3rem
   margin-bottom 1.5rem
   .main
     width 62% !important
