@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-melodydl",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "blog by vuepress",
   "main": "lib/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "@vssue/api-github-v3": "^1.4.3",
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "@vuepress/plugin-back-to-top": "^1.4.1",
+    "@vuepress/plugin-google-analytics": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
     "date-fns": "^1.30.1",
     "lodash.debounce": "^4.0.8",
