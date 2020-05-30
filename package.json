@@ -26,6 +26,8 @@
     "@vssue/api-github-v3": "^1.4.3",
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
     "@vuepress/plugin-back-to-top": "^1.4.1",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.0.0",
     "@vuepress/plugin-google-analytics": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
     "date-fns": "^1.30.1",
