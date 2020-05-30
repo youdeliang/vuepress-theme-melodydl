@@ -1,7 +1,7 @@
 ## 速览
 - [x]  这是一款 Vuepress 主题，集成了博客所需的分类、TAG墙、分页、评论等功能。
 - [x]  主题追求极简，配置上手简单，适配移动端。
-- [x] [预览地址](ydlcq.cn)
+- [x] [预览地址](https://www.ydlcq.cn/)
 - [x] 博客效果展示：
 
 ![](https://user-gold-cdn.xitu.io/2020/5/2/171d4a46cd1c4caf?w=599&h=287&f=gif&s=1994152)
