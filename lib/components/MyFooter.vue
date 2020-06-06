@@ -1,24 +1,28 @@
 <template>
-   <footer class="footer">
+  <footer class="footer">
     <p
-     v-if="sns"
-     class="footer-sns-link" 
+      v-if="sns"
+      class="footer-sns-link"
     >
-      <a 
-       target="_blank" 
-       v-for="(item, name) in sns"
-       :key="name"
-       :href="item.link"
-       class="sns-link"
+      <a
+        v-for="(item, name) in sns"
+        :key="name"
+        target="_blank"
+        :href="item.link"
+        class="sns-link"
       >
-        <IconSns 
+        <IconSns
           :name="name"
           :account="item.account"
         />
       </a>
     </p>
+    <!-- eslint-disable vue/no-v-html -->
     <div class="copyright">
-      <span id="custom" v-html="custom" />
+      <span
+        id="custom"
+        v-html="custom"
+      />
       <iframe
         v-if="gitbtn"
         :src="gitbtn.repository"
@@ -37,16 +41,16 @@
 import IconSns from '@theme/components/IconSns.vue'
 export default {
   components: {
-    IconSns
+    IconSns,
   },
   computed: {
-    sns() {
+    sns () {
       return this.$themeConfig.sns || null
     },
-    custom() {
+    custom () {
       return this.$themeConfig.footer.custom || null
     },
-    gitbtn() {
+    gitbtn () {
       return this.$themeConfig.footer.gitbtn || null
     },
   },
@@ -60,7 +64,7 @@ export default {
   }
   color $grayTextColor
   text-align center
-  .copyright 
+  .copyright
     font-size 16px
     line-height 1.5rem
     padding-bottom 1rem

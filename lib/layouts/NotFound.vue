@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import MyHeader from "@theme/components/MyHeader.vue"
-import MyFooter from "@theme/components/MyFooter.vue"
+import MyHeader from '@theme/components/MyHeader.vue'
+import MyFooter from '@theme/components/MyFooter.vue'
 export default {
   name: 'NotFound',
   components: {
     MyHeader,
-    MyFooter
-  }
+    MyFooter,
+  },
 }
 </script>
 

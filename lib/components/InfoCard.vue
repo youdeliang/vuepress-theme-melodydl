@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 <template>
   <div class="info-card">
     <div
@@ -13,9 +14,9 @@
 
     <div class="info-card-body">
       <section class="info-name">
-        {{ name }}
+        {{ nickName }}
       </section>
-
+      <!-- eslint-disable vue/no-v-html -->
       <section
         v-if="description"
         class="info-desc"
@@ -29,7 +30,7 @@
             type="location"
           >
             {{ location }}
-          </IconInfo> 
+          </IconInfo>
         </section>
 
         <section v-if="organization">
@@ -50,28 +51,27 @@
             {{ email }}
           </IconInfo>
         </section>
-
       </section>
     </div>
     <div class="info-card-footer">
       <p
         v-if="sns"
-        class="footer-sns-link" 
+        class="footer-sns-link"
       >
-      <a 
-        target="_blank" 
-        v-for="(item, name) in sns"
-        :key="name"
-        :href="item.link"
-        class="sns-link"
-      >
-        <IconSns 
-          :name="name"
-          :account="item.account"
-          size="35px"
-        />
-      </a>
-    </p>
+        <a
+          v-for="(item, name) in sns"
+          :key="name"
+          target="_blank"
+          :href="item.link"
+          class="sns-link"
+        >
+          <IconSns
+            :name="name"
+            :account="item.account"
+            size="35px"
+          />
+        </a>
+      </p>
     </div>
   </div>
 </template>
@@ -82,22 +82,22 @@ import IconInfo from '@theme/components/IconInfo.vue'
 export default {
   components: {
     IconSns,
-    IconInfo
+    IconInfo,
   },
   computed: {
-    sns() {
+    sns () {
       return this.$themeConfig.sns || null
     },
 
     info () {
       return this.$themeConfig.personalInfo || {}
     },
-    
-    avatar() {
+
+    avatar () {
       return this.info.avatar || '/avatar-top.jpeg'
     },
 
-    name () {
+    nickName () {
       return this.info.name || 'Unknown'
     },
 
@@ -117,10 +117,6 @@ export default {
       return this.info.email || null
     },
 
-    organization () {
-      return this.info.organization || null
-    },
-
     headerBackgroundImg () {
       return this.info.headerBackgroundImg || null
     },
@@ -138,7 +134,7 @@ export default {
 
       return {}
     },
-  }
+  },
 }
 </script>
 

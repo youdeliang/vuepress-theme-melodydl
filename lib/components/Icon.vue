@@ -43,7 +43,7 @@ export default {
 
 <style lang="stylus">
 .icon
-  width 1em 
+  width 1em
   height 1em
   vertical-align -0.15em
   fill #2c3e50

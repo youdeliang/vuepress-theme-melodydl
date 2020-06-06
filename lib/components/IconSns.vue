@@ -5,41 +5,41 @@ export default {
   name: 'IconSns',
 
   functional: true,
-  
+
   components: {
-    Icon
+    Icon,
   },
 
   props: {
     account: {
       type: String,
       require: false,
-      default: ''
+      default: '',
     },
 
     size: {
       type: String,
       require: true,
-      default: '40px'
+      default: '40px',
     },
 
     name: {
       type: String,
-      require: true
-    }
+      require: true,
+      default: '',
+    },
   },
 
-  render(h, { props: { name, account, size }}) {
-
+  render (h, { props: { name, account, size } }) {
     return (
       <span class='sns-icon'>
-        <Icon 
+        <Icon
           name={name}
           size={size}
-        /> 
+        />
       </span>
     )
-  }
+  },
 }
 </script>
 

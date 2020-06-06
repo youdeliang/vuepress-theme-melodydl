@@ -1,6 +1,6 @@
 <template>
   <ul class="pagination">
-    <li 
+    <li
       :class="{ disabled: onFirstPage }"
       class="page-item"
       @click.prevent="prevPage"
@@ -18,11 +18,11 @@
       <span>{{ paginator.value }}</span>
     </li>
 
-     <li
+    <li
       :class="{ disabled: onLastPage }"
       class="page-item"
       @click.prevent="nextPage"
-     >
+    >
       <span>&gt;</span>
     </li>
   </ul>
@@ -190,6 +190,6 @@ export default {
     &:not(.active)
       color $textColor
       cursor pointer
-      &:hover 
+      &:hover
         color $accentColor
 </style>

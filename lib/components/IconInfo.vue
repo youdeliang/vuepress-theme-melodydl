@@ -7,7 +7,7 @@ export default {
   functional: true,
 
   components: {
-    Icon
+    Icon,
   },
 
   props: {
@@ -20,21 +20,22 @@ export default {
 
     type: {
       type: String,
-      require: true
+      require: true,
+      default: '',
     },
 
     size: {
       type: String,
       require: false,
-      default: '1em'
-    }
+      default: '1em',
+    },
   },
 
-  render(h, { props: { type, size, href }, children }) {
+  render (h, { props: { type, size, href }, children }) {
     const Component = href ? 'a' : 'span'
     return (
       <Component href={href}>
-        <Icon 
+        <Icon
           class="info-icon"
           name={type}
           size={size}
@@ -45,6 +46,6 @@ export default {
         </span>
       </Component>
     )
-  }
+  },
 }
 </script>

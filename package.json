@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "vuepress build docs -dest dist",
-    "dev": "vuepress dev docs"
+    "dev": "vuepress dev docs",
+    "lint": "eslint --ext .js,.vue lib docs"
   },
   "keywords": [
     "blog",
@@ -22,12 +23,32 @@
   ],
   "author": "youdeliang",
   "license": "MIT",
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "plugin:vue/recommended"
+    ],
+    "rules": {
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "dot-notation": [
+        "error",
+        {
+          "allowPattern": "^$"
+        }
+      ]
+    },
+    "root": true
+  },
   "dependencies": {
+    "@babel/core": "^7.0.0-0",
     "@vssue/api-github-v3": "^1.4.3",
     "@vssue/vuepress-plugin-vssue": "^1.4.3",
-    "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.0.0",
+    "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-google-analytics": "^1.4.1",
     "@vuepress/plugin-nprogress": "^1.4.1",
     "date-fns": "^1.30.1",
@@ -38,6 +59,13 @@
     "vuepress-plugin-table-of-contents": "^1.1.5"
   },
   "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.1.2",
     "vuepress": "^1.4.1"
   },
   "peerDependencies": {

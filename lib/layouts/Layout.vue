@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import PostList from "@theme/components/PostList.vue"
+import PostList from '@theme/components/PostList.vue'
 export default {
-  components: { PostList }
+  components: { PostList },
 }
 </script>
 

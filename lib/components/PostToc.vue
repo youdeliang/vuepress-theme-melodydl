@@ -1,10 +1,10 @@
 <template>
-  <div 
+  <div
     class="post-toc"
     :style="style"
   >
     <h4>- CATALOG</h4>
-    <TOC class="post-nav-toc"/>
+    <TOC class="post-nav-toc" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import throttle from 'lodash.throttle'
 import debounce from 'lodash.debounce'
 export default {
   name: 'PostToc',
-  data() {
+  data () {
     return {
       width: 0,
       fixed: false,
@@ -22,30 +22,30 @@ export default {
       }, 100),
       resizeListener: debounce(() => {
         this.width = this.getWidth()
-      }, 100)
+      }, 100),
     }
   },
   computed: {
-    navbarHeight() {
+    navbarHeight () {
       return document.querySelector('.navbar').clientHeight
     },
     infoCardDom () {
       return document.querySelector('#app .info-card')
     },
-    style() {
+    style () {
       return {
         position: this.fixed ? 'fixed' : 'relative',
         top: this.fixed ? `${this.navbarHeight}` : 0,
         width: `${this.width}px`,
       }
-    }
+    },
   },
-  mounted() {
+  mounted () {
     this.width = this.getWidth()
     window.addEventListener('scroll', this.scrollListener)
     window.addEventListener('resize', this.resizeListener)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.scrollListener)
     window.removeEventListener('resize', this.resizeListener)
   },

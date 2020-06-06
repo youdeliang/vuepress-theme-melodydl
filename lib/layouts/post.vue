@@ -1,15 +1,14 @@
 <template>
   <div class="post">
-
     <article class="main-div">
-      <Content 
+      <Content
         class="post-content content"
       />
     </article>
 
-    <div 
-      class="main-div vssue"
+    <div
       v-if="vssue"
+      class="main-div vssue"
     >
       <Vssue :title="vssueTitle" />
     </div>
@@ -26,7 +25,7 @@ export default {
     vssueTitle () {
       return this.$page.frontmatter.title || undefined
     },
-  }
+  },
 }
 </script>
 

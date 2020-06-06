@@ -1,17 +1,20 @@
 <template>
   <div>
     <div class="tags main-div">
-      <div 
-        class="tag main-tag"
+      <div
         v-for="tag in tagList"
         :key="tag"
+        class="tag main-tag"
         @click="selectPost"
       >
-        {{tag}}
+        {{ tag }}
       </div>
     </div>
     <TransitionSlide>
-      <PostList :posts="posts" :key="$page.path"/>
+      <PostList
+        :key="$page.path"
+        :posts="posts"
+      />
     </TransitionSlide>
   </div>
 </template>
@@ -21,24 +24,9 @@ import PostList from '@theme/components/PostList.vue'
 import TransitionSlide from '@theme/components/TransitionSlide.vue'
 export default {
   name: 'Tags',
-  computed: {
-    tagList() {
-      return Object.keys(this.$tags.map)
-    },
-    tagMap() {
-      return this.$tags.map
-    }
-  },
   components: {
     PostList,
-    TransitionSlide
-  },
-  methods: {
-    selectPost(e) {
-      const tagName = e.target.innerText
-      console.log(tagName)
-      this.posts = this.tagMap[tagName].posts
-    }
+    TransitionSlide,
   },
 
   data () {
@@ -46,9 +34,24 @@ export default {
       posts: null,
     }
   },
+  computed: {
+    tagList () {
+      return Object.keys(this.$tags.map)
+    },
+    tagMap () {
+      return this.$tags.map
+    },
+  },
 
   created () {
     this.posts = this.$posts
+  },
+  methods: {
+    selectPost (e) {
+      const tagName = e.target.innerText
+      console.log(tagName)
+      this.posts = this.tagMap[tagName].posts
+    },
   },
 }
 </script>
@@ -59,5 +62,5 @@ export default {
   text-align center
   .main-tag
     height 28px
-  
+
 </style>

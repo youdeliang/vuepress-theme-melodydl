@@ -1,21 +1,19 @@
 <template>
-  <header 
+  <header
     class="header-container"
     :style="style"
   >
-    
     <MyNavbar />
 
     <TransitionSlide>
-      <div 
+      <div
         :key="$page.path"
         class="header-title"
       >
-        <h1>{{title}}</h1>
-        <p>{{subtitle}}</p>
+        <h1>{{ title }}</h1>
+        <p>{{ subtitle }}</p>
       </div>
     </TransitionSlide>
-    
   </header>
 </template>
 
@@ -24,21 +22,21 @@ import TransitionSlide from '@theme/components/TransitionSlide.vue'
 import MyNavbar from '@theme/components/MyNavbar.vue'
 export default {
   name: 'MyHeader',
-  components: { 
+  components: {
     MyNavbar,
-    TransitionSlide
+    TransitionSlide,
   },
   computed: {
-    title() {
+    title () {
       return this.$frontmatter.title || null
     },
-    subtitle() {
+    subtitle () {
       return this.$frontmatter.subtitle || null
     },
-    backgroundImg() {
+    backgroundImg () {
       return this.$frontmatter.headerImage || this.$themeConfig.header.postHeaderImg
     },
-    style() {
+    style () {
       if (this.backgroundImg) {
         let url = this.backgroundImg
         if (Array.isArray(url)) {
@@ -59,7 +57,7 @@ export default {
     randomArr (arr) {
       return arr[Math.floor(Math.random() * arr.length)]
     },
-  }
+  },
 }
 </script>
 
@@ -70,7 +68,7 @@ export default {
   color #fff
   position relative
   width auto
-  &::after 
+  &::after
     content ""
     position absolute
     z-index -20
@@ -89,16 +87,16 @@ export default {
     justify-content center
     align-items center
     flex-direction column
-    h1 
+    h1
       font-size 5rem
-    p 
+    p
       font-size 1.2rem
       margin-top 10px
     @media (max-width $MQMobile - 1)
       padding-top $navbarHeight
-      & h1 
+      & h1
         font-size 1.5rem
-      & p 
+      & p
         font-size 1rem
-    
+
 </style>

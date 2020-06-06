@@ -1,6 +1,6 @@
 <template>
   <div class="main-div">
-    <Content class="post-content content"/>
+    <Content class="post-content content" />
   </div>
 </template>
 
@@ -13,11 +13,11 @@ export default {
 <style lang="stylus" scoped>
 .main-div
   line-height 1.7rem
-  & >>> .content 
+  & >>> .content
     line-height 3 !important
     blockquote
       margin 20px 0
-    a 
+    a
       color $accentColor
     ul
       margin-top 10px

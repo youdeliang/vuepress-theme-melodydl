@@ -1,30 +1,31 @@
 <template>
-   <div class="post-list">
-     <TransitionSlide>
-    <div
-      v-if="total === 0"
-      key="no-posts"
-      class="no-posts main-div"
-    >
-      no posts
-    </div>
-    <div
-      v-else
-      :key="currentPage"
-      class="posts-items"
-    >
-      <TransitionSlide group>
-        <PostsListItem
-          v-for="post in pagePosts"
-          :key="post.path"
-          :post="post"
-        />
-      </TransitionSlide>
-    </div>
+  <div class="post-list">
+    <TransitionSlide>
+      <div
+        v-if="total === 0"
+        key="no-posts"
+        class="no-posts main-div"
+      >
+        no posts
+      </div>
+      <div
+        v-else
+        :key="currentPage"
+        class="posts-items"
+      >
+        <TransitionSlide group>
+          <PostsListItem
+            v-for="post in pagePosts"
+            :key="post.path"
+            :post="post"
+          />
+        </TransitionSlide>
+      </div>
     </TransitionSlide>
-    <div 
+    <div
       v-if="total > 1"
-      class="post-paginator">
+      class="post-paginator"
+    >
       <Pagination
         v-model="currentPage"
         :total="total"
@@ -39,27 +40,22 @@ import PostsListItem from '@theme/components/PostsListItem.vue'
 import TransitionSlide from '@theme/components/TransitionSlide.vue'
 export default {
   name: 'PostList',
-  data() {
-    return {
-      currentPage: 1,
-    }
-  },
-  
+
   components: {
     PostsListItem,
     TransitionSlide,
-    Pagination
+    Pagination,
   },
   props: {
     posts: {
       type: Array,
       required: false,
-      default: null
-    }
+      default: null,
+    },
   },
-  watch: {
-    listPosts() {
-      this.currentPage = 1
+  data () {
+    return {
+      currentPage: 1,
     }
   },
   computed: {
@@ -81,10 +77,15 @@ export default {
       return this.listPosts.slice(begin, end)
     },
 
-    key() {
+    key () {
       return this.posts ? this.total : null
-    }
-  }
+    },
+  },
+  watch: {
+    listPosts () {
+      this.currentPage = 1
+    },
+  },
 }
 </script>
 

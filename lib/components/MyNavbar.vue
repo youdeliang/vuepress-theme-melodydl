@@ -1,10 +1,9 @@
 <template>
-  <nav 
-    class="navbar" 
+  <nav
+    class="navbar"
     :style="navbarStyle"
   >
-
-    <RouterLink 
+    <RouterLink
       class="navbar-link"
       :to="$localePath"
       :class="{
@@ -14,36 +13,34 @@
       {{ navtitle }}
     </RouterLink>
 
-    <ul 
+    <ul
       v-if="navList"
       class="navbar-links"
       :class="{
         'show': isNavBtn,
         'fontColor': fixed
-      }" 
+      }"
     >
-      <li 
-        v-for="(item, index) of navList" 
+      <li
+        v-for="(item, index) of navList"
         :key="index"
       >
-
-        <a 
+        <a
           v-if="item.type=='url'"
-          :href="item.link" 
+          :href="item.link"
           target="_blank"
         >
-          {{item.text}}
+          {{ item.text }}
         </a>
 
         <RouterLink
-          v-else 
-          tag='a' 
+          v-else
+          tag="a"
           :to="item.link"
           @click.native="isNavBtn = false"
         >
-          {{item.text}}
+          {{ item.text }}
         </RouterLink>
-
       </li>
     </ul>
 
@@ -53,8 +50,8 @@
       :class="navbtnShow"
       @click="isNavBtn = !isNavBtn"
     >
-      <span 
-        v-for="count in 3" 
+      <span
+        v-for="count in 3"
         :key="count"
       />
     </div>
@@ -64,57 +61,54 @@
 <script>
 import throttle from 'lodash.throttle'
 export default {
-  data() {
+  data () {
     return {
       fixed: false,
       isNavBtn: false, // @media nav is button
       scrollHeight: 0,
       scrollListener: throttle(() => {
-        this.fixed = this.getScrollTop() - this.scrollHeight < 0 
-          ? this.getScrollTop()
-            ? true
-            : false
+        this.fixed = this.getScrollTop() - this.scrollHeight < 0
+          ? !!this.getScrollTop()
           : false
         this.scrollHeight = this.getScrollTop()
       }, 100),
     }
   },
   computed: {
-    navbtnShow() {
+    navbtnShow () {
       return this.isNavBtn ? 'open' : null
     },
-    navtitle() {
+    navtitle () {
       return this.$themeConfig.title
     },
-    navList() {
+    navList () {
       return this.$themeConfig.nav
     },
-    navbarStyle() {
+    navbarStyle () {
       return {
-        'position'  : this.fixed ? 'fixed' : 'absolute',
-        'background': this.fixed ? '#fff' : null,
-        'box-shadow': this.fixed ? '0px 5px 10px 2px rgba(0, 0, 0, 0.2)' : null,
+        position: this.fixed ? 'fixed' : 'absolute',
+        background: this.fixed ? '#fff' : null,
         'box-shadow': this.fixed ? 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.239216) 0px 1px 4px' : null,
-        'color'     : this.fixed ? '#404040' : null, 
-        'opacity'   : this.fixed ? '0.8' : '1',
-        'transition': 'all 0.5s ease-in-out'
+        color: this.fixed ? '#404040' : null,
+        opacity: this.fixed ? '0.8' : '1',
+        transition: 'all 0.5s ease-in-out',
       }
-    }
+    },
   },
-  mounted() {
+  mounted () {
     window.addEventListener('scroll', this.scrollListener)
   },
-  beforeDestroy() {
+  beforeDestroy () {
     window.removeEventListener('scroll', this.scrollListener)
   },
   methods: {
     randomArr (arr) {
       return arr[Math.floor(Math.random() * arr.length)]
     },
-    getScrollTop() {
+    getScrollTop () {
       return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || null
     },
-  }
+  },
 }
 </script>
 
@@ -124,8 +118,7 @@ export default {
 $gutter = 0.7rem
 $lineHeight = $navbarHeight - ($gutter * 2)
 
-
-.navbar 
+.navbar
   position absolute
   top 0
   left 0
@@ -137,11 +130,11 @@ $lineHeight = $navbarHeight - ($gutter * 2)
   justify-content space-between
   @media (max-width $MQMobile - 1)
     background-color alpha($navbarColor, 0.8)
-  .navbar-link  
+  .navbar-link
     font-size 18px
     padding 0 20px
     color $headerTitleColor
-    &:hover 
+    &:hover
       color $accentColor
     @media (min-width $MQMobile)
       &.fontColor
@@ -154,10 +147,10 @@ $lineHeight = $navbarHeight - ($gutter * 2)
     line-height $lineHeight
     padding 0 20px
     color $navbarColor
-    & > li 
+    & > li
       padding 0 1rem
       list-style none
-      &:hover 
+      &:hover
         color $accentColor
     @media (min-width $MQMobile)
       &.fontColor
@@ -169,14 +162,14 @@ $lineHeight = $navbarHeight - ($gutter * 2)
         width 50%
         text-align center
         position absolute
-        top $navbarHeight 
+        top $navbarHeight
         right 0
         padding 1rem
         color $textColor
         background-color alpha($navbarColor, 0.8)
 
   /* nav button css */
-  #nav-icon 
+  #nav-icon
     display none
     width 25px
     margin-right 20px
@@ -194,7 +187,7 @@ $lineHeight = $navbarHeight - ($gutter * 2)
     @media (max-width $MQMobile - 1)
       display inline-block
 
-    span 
+    span
       position absolute
       height 4px
       width 100%
@@ -210,10 +203,10 @@ $lineHeight = $navbarHeight - ($gutter * 2)
       -moz-transition 0.25s ease-in-out
       -o-transition 0.25s ease-in-out
       transition 0.25s ease-in-out
-  #nav-icon span:nth-child(1) 
+  #nav-icon span:nth-child(1)
     top calc(50% - 8px)
 
-  #nav-icon span:nth-child(2) 
+  #nav-icon span:nth-child(2)
     top 50%
 
   #nav-icon span:nth-child(3)
@@ -226,11 +219,11 @@ $lineHeight = $navbarHeight - ($gutter * 2)
     -o-transform rotate(135deg)
     transform rotate(135deg)
 
-  #nav-icon.open span:nth-child(2) 
+  #nav-icon.open span:nth-child(2)
     opacity 0
     left -60px
 
-  #nav-icon.open span:nth-child(3) 
+  #nav-icon.open span:nth-child(3)
     top 50%
     -webkit-transform rotate(-135deg)
     -moz-transform rotate(-135deg)

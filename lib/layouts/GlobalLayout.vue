@@ -3,20 +3,20 @@
     <MyHeader />
 
     <MyMain />
-  
+
     <MyFooter />
   </div>
 </template>
 
 <script>
-import MyHeader from "@theme/components/MyHeader.vue"
-import MyFooter from "@theme/components/MyFooter.vue"
-import MyMain from "@theme/components/MyMain.vue"
+import MyHeader from '@theme/components/MyHeader.vue'
+import MyFooter from '@theme/components/MyFooter.vue'
+import MyMain from '@theme/components/MyMain.vue'
 export default {
   components: {
     MyHeader,
     MyFooter,
-    MyMain
+    MyMain,
   },
 }
 </script>

@@ -1,33 +1,32 @@
 <template>
-  <div 
+  <div
     class="container"
   >
-
-    <main 
+    <main
       class="main"
       :style="style"
     >
       <TransitionSlide>
-        <component 
-          :is="layout" 
+        <component
+          :is="layout"
           :key="$page.path"
         />
       </TransitionSlide>
     </main>
-    <TransitionSlide direction='x' >
-    <aside 
-      class="aside" 
-      v-show="layout !== 'tags'"
-    >
-      <InfoCard 
-        class="main-div"
-      />
+    <TransitionSlide direction="x">
+      <aside
+        v-show="layout !== 'tags'"
+        class="aside"
+      >
+        <InfoCard
+          class="main-div"
+        />
 
-      <PostToc
-        v-if="$page.type === 'post'"
-        class="main-div aside-toc"
-      />
-    </aside>
+        <PostToc
+          v-if="$page.type === 'post'"
+          class="main-div aside-toc"
+        />
+      </aside>
     </TransitionSlide>
   </div>
 </template>
@@ -41,10 +40,10 @@ export default {
   components: {
     InfoCard,
     PostToc,
-    TransitionSlide
+    TransitionSlide,
   },
   computed: {
-    layout() {
+    layout () {
       const layout = this.$page.frontmatter.layout
       if (layout) {
         return layout
@@ -56,12 +55,12 @@ export default {
 
       return 'Layout'
     },
-    style() {
+    style () {
       return {
-        width: this.$page.path !== '/tags/' ? '60%' : '70%'
+        width: this.$page.path !== '/tags/' ? '60%' : '70%',
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
