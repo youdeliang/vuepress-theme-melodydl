@@ -9,7 +9,7 @@ English | [简体中文](./README-zh.md)
 ## Features
 - [x]  This is theme of Vuepress，support the Tag、Pagination and Comment of Blog。
 - [x]  Theme is minimalist，config is simple，mobile is adaptive。
-- [x] [wesite address](https://www.ydlcq.cn/)
+- [x] [Address](https://www.ydlcq.cn/)
 - [x] Blog Show：
 
 ![](https://user-gold-cdn.xitu.io/2020/5/2/171d4a46cd1c4caf?w=599&h=287&f=gif&s=1994152)

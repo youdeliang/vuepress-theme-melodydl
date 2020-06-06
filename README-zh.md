@@ -16,10 +16,10 @@
 ## 主题使用
 
 ### 安装主题
-创建一个新的项目 my-blog：
+创建一个新的项目 myBlog：
 ```
-mkdir my-blog
-cd my-blog
+mkdir myBlog
+cd myBlog
 ```
 初始化 yarn 或 npm ：
 
