@@ -1,3 +1,8 @@
+# VuePress Blog Theme 
+
+[![](https://img.shields.io/npm/v/vuepress-theme-melodydl)](https://www.npmjs.com/package/vuepress-theme-melodydl)
+[![](https://img.shields.io/github/license/youdeliang/vuepress-theme-melodydl)](https://github.com/youdeliang/vuepress-theme-melodydl/blob/master/LICENSE)
+
 ## 速览
 - [x]  这是一款 Vuepress 主题，集成了博客所需的分类、TAG墙、分页、评论等功能。
 - [x]  主题追求极简，配置上手简单，适配移动端。
@@ -235,4 +240,3 @@ npm run build
 
 ## 最后
 如果觉得主题好用的话，请给个 Star 鼓励下～谢谢 🙏🙏
-
